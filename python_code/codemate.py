@@ -2,7 +2,7 @@ import curses
 from curses import wrapper
 import os
 
-def scripto():
+def codeMate():
     fileToEdit = input("What file would you like to edit?: ").strip()
     
     # --- LOAD FILE CONTENT ---
@@ -62,4 +62,3 @@ def scripto():
     wrapper(main)
     print(f"File saved to {fileToEdit}")
 
-scripto()
