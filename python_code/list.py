@@ -1,16 +1,18 @@
 import os
 
 def ls():
-    userPath = input("Input absolute path of the directory you want to list\n (if its this dir then put ls again): ")
-    if userPath.lower() == "ls":
+    lis = input("(type ls or ls -a), > ")
+    lis = lis.split()
+
+    if len(lis) > 1 and lis[1] == '-a':
         cwd = os.getcwd()
         currentDir = os.path.abspath(cwd)
         dir = os.listdir(currentDir)
         for items in dir:
             print(items)
     else:
-        currentDir = os.path.abspath(userPath)
+        cwd = os.getcwd()
+        currentDir = os.path.abspath(cwd)
         dir = os.listdir(currentDir)
         for items in dir:
             print(items)
-        return items
